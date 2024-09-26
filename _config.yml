@@ -22,11 +22,11 @@ repository               : "academicpages/academicpages.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Your Sidebar Name"
-  pronouns         : # example: "she/her"  
+  name             : "Sai Krishna Meka"
+  pronouns         : "he/him"  
   bio              : "Short biography for the left-hand sidebar"
-  location         : "260 S Chauncey Ave"
-  employer         : "Purdue University, Main Campus (West Lafayette)"
+  location         : # "260 S Chauncey Ave"
+  employer         : "Purdue University, Main Campus"
   uri              : # URL
   email            : "saikrishnameka867@gmail.com" 
 
