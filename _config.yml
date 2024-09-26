@@ -31,10 +31,10 @@ author:
   email            : "saikrishnameka867@gmail.com" 
 
   # Academic websites
-  arxiv            : "https://arxiv.org/user/"
+  arxiv            : # "https://arxiv.org/user/"
   googlescholar    : "https://scholar.google.com/citations?hl=en&user=aVtl_b0AAAAJ"
   impactstory      : # URL
-  orcid            : "http://orcid.org/yourorcidurl"
+  orcid            : # "http://orcid.org/yourorcidurl"
   semantic         : # URL
   pubmed           : # "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   researchgate     : "https://www.researchgate.net/profile/Sai-Krishna-Meka"
