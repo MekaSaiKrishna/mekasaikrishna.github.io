@@ -40,8 +40,8 @@ Work experience
   * Worked in the area of _Structural Health Monitoring_ of Aerospace Structures.
   * Used various Machine learning models to predict loads acting on complicated cantilever composite box by feeding the model strain values to the model measured using FBG (Fibre Bragg Grating) sensors.
   * Compared the results acquired from Regression models and Artificial Neural Network models using MATLAB: Statistics \& Machine Learning toolbox and MATLAB: Neural Network toolbox
-  * It was observed that use of Neural Network models \textbf{decreased} the computation time **by several orders** of magnitude and performs well when anomalous data is provided.
-  * For small data sets the absolute error percentage was as low as **0.055\%** multi-variate linear regression model.
+  * It was observed that use of Neural Network models **decreased** the computation time **by several orders** of magnitude and performs well when anomalous data is provided.
+  * For small data sets the absolute error percentage was as low as **0.055 %** multi-variate linear regression model.
   * Supervisor: Saransh Jain, NAL (CSIR - National Aerospace Laboratories), Bengaluru, India
 
 
@@ -54,27 +54,31 @@ Scholastic Achievements
 
 Positions of Responsibility
 ======
-**Teaching Assistant** | _Purdue University, West Lafayette_
+## Teaching Assistant | _Purdue University, West Lafayette_
 
-### AAE 590CD: Design of Composite Materials and Structures August 2024 – Ongoing*
+### AAE 590CD: Design of Composite Materials and Structures 
+_August 2024 – Ongoing*_
 * Assisting in the instruction and management of a graduate-level course, providing academic support to students
 through office hours and one-on-one guidance in Piazza.
 * Collaborating with the course instructor to develop and grade assignments, exams, and projects.
 
-### AAE 45400: Design of Aerospace Structures January 2024 – April 2024
+### AAE 45400: Design of Aerospace Structures 
+_January 2024 – April 2024_
 * Responsible for solving and evaluating student assignments, including homework and exams, in adherence to
 grading rubrics and course guidelines.
 * Created ABAQUS tutorials on conducting finite element analyses for 3D Trusses using various modeling methods.
 * Actively responded to queries of students to enhance their comprehension of the subject.
 
-### AAE 20401: Aeromechanics II Laboratory August 2023 – December 2023
+### AAE 20401: Aeromechanics II Laboratory 
+_August 2023 – December 2023_
 * Held pre-lab discussions to reinforce theoretical concepts covered in lectures and ensure students grasped the
 practical implications of their experiments.
 * Conducted **6 hands-on experiments** and demonstrations, focusing on fundamental principles of structural mechanics
 such as Tensile tests, Bending, Torsion and Shear tests.
 * Taught two sections of students consisting **20 students** in total.
 
-**Placement Core** | _Placement Cell, Indian Institute of Technology, Madras May 2019 – May 2020_
+## Placement Core | _Placement Cell, Indian Institute of Technology, Madras_ 
+_May 2019 – May 2020_
 * Part of a student-run body of **170** members for a year, handled the placement process for **1200+** students.
 * Lead a 7-member team in organizing placement activities for 40+ students of Aerospace Engineering.
 * Achieved the best campus placements among all the IITs, with an increment in offers by **30\%**.
