@@ -15,7 +15,8 @@ The contents above will be part of a list of publications, if the user clicks th
 
 Include a cool gif?
 ---
-<img src="https://github.com/MekaSaiKrishna/mekasite/blob/master/images/Lshape_cooling.gif" width="500" />
+
+<img src="https://github.com/MekaSaiKrishna/mekasite/blob/master/images/Lshape_cooling.gif" width="600" />
 
 
 
