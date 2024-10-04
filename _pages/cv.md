@@ -17,32 +17,33 @@ Education
 
 Work experience
 ======
-* **Graduate Research**: *August 2021 – Ongoing*
+### **Graduate Research**: *August 2021 – Ongoing*
+#### Supervisor: [Dr.Dianyun Zhang](https://www.purdue.edu/cmsc/tech-area-bio/zhang.php), Associate Professor, School of Aeronautics & Astronautics, Purdue University ####
   * Conducting advanced research on the progressive damage of polymer matrix composite materials using the smeared crack approach, a continuum method.
   * Investigated impact of manufacturing defects on the damage progression of composite materials.
   * Developed UMATs on ABAQUS for the smeared crack constitutive law in isotropic and orthotropic materials.
   * Designing and preparing to conduct validation experiments, including 4-point bending tests, to compare experimental results with simulation predictions.
   * Supervisor: [Dr.Dianyun Zhang](https://www.purdue.edu/cmsc/tech-area-bio/zhang.php), Associate Professor, School of Aeronautics & Astronautics, Purdue University
 
-* **Summer Internship at GE Aerospace**: *June 2024 – August 2024*
+### **Summer Internship at GE Aerospace**: *June 2024 – August 2024*
+#### Supervisor: Dr. Li Zheng, GE Aerospace, Niskayuna, New York ####
   * One of the **7** Ph.D. research interns selected for the GE fellow internship 11 week program.
   * Conducted extensive literature review to inform project development and innovation.
   * Developed parametric codes for simulations in ANSYS Mechanical APDL to reduce the time spent on modeling.
   * Drafted a comprehensive standard operating procedure report to characterize the thermo-mechanical properties of a particular material from experiments.
-  * Supervisor: Dr. Li Zheng, GE Aerospace, Niskayuna, New York
 
-* **Undergraduate Research**: *September 2020 – May 2021*
+### **Undergraduate Research**: *September 2020 – May 2021*
+#### Supervisor: Professor [Dr. K. V. Nagendra Gopal](http://www.ae.iitm.ac.in/~gopal/ngopal.html), Department of Aerospace Engineering, Indian Institute of Technology, Madras ####
   * Used semi-analytical method (SSDQM – State Space Differential Quadrature Method) to solve for natural frequencies of primarily laminated sandwich panels with a soft core and later compared it with a finite element 3D model of the same.
   * Coordinated with the advisor and worked entirely remotely due to the pandemic, yet made significant progress while adapting to the situation
-  * Supervisor: Professor [Dr. K. V. Nagendra Gopal](http://www.ae.iitm.ac.in/~gopal/ngopal.html), Department of Aerospace Engineering, Indian Institute of Technology, Madras
 
-* **Summer Undergraduate Research Internship**: *May 2019 – July 2019*
+### **Summer Undergraduate Research Internship**: *May 2019 – July 2019*
+#### Supervisor: Saransh Jain, NAL (CSIR - National Aerospace Laboratories), Bengaluru, India ####
   * Worked in the area of _Structural Health Monitoring_ of Aerospace Structures.
   * Used various Machine learning models to predict loads acting on complicated cantilever composite box by feeding the model strain values to the model measured using FBG (Fibre Bragg Grating) sensors.
-  * Compared the results acquired from Regression models and Artificial Neural Network models using MATLAB: Statistics \& Machine Learning toolbox and MATLAB: Neural Network toolbox
+  * Compared the results acquired from Regression models and Artificial Neural Network models using MATLAB: Statistics & Machine Learning toolbox and MATLAB: Neural Network toolbox
   * It was observed that use of Neural Network models **decreased** the computation time **by several orders** of magnitude and performs well when anomalous data is provided.
   * For small data sets the absolute error percentage was as low as **0.055 %** multi-variate linear regression model.
-  * Supervisor: Saransh Jain, NAL (CSIR - National Aerospace Laboratories), Bengaluru, India
 
 
 Scholastic Achievements
