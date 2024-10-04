@@ -15,6 +15,7 @@ Education
 * M.S. in Aeronautics and Astronautics, Purdue University , 2023
 * B.Tech (Hons). in Aerospace Engineering, Indian Institute of Technology, Madras, 2021
 
+___
 Work experience
 ======
 ### **Graduate Research**: *August 2021 – Ongoing*
@@ -23,7 +24,6 @@ Work experience
   * Investigated impact of manufacturing defects on the damage progression of composite materials.
   * Developed UMATs on ABAQUS for the smeared crack constitutive law in isotropic and orthotropic materials.
   * Designing and preparing to conduct validation experiments, including 4-point bending tests, to compare experimental results with simulation predictions.
-  * Supervisor: [Dr.Dianyun Zhang](https://www.purdue.edu/cmsc/tech-area-bio/zhang.php), Associate Professor, School of Aeronautics & Astronautics, Purdue University
 
 ### **Summer Internship at GE Aerospace**: *June 2024 – August 2024*
 #### Supervisor: Dr. Li Zheng, GE Aerospace, Niskayuna, New York ####
