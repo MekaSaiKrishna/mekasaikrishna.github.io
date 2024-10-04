@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %} 
 
-Education
+<font color="red">Education</font>
 ======
 * Ph.D in Aeronautics and Astronautics, Purdue University , 2025 (expected)
 * M.S. in Aeronautics and Astronautics, Purdue University , 2023
