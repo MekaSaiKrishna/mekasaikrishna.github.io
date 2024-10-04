@@ -16,6 +16,8 @@ Education
 * B.Tech (Hons). in Aerospace Engineering, Indian Institute of Technology, Madras, 2021
 
 ___
+
+
 Work experience
 ======
 ### **Graduate Research**: *August 2021 – Ongoing*
