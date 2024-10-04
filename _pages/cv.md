@@ -56,6 +56,8 @@ Scholastic Achievements
 * Placed among the **top 1%** in JEE-Advanced 2017 out of **200,000** students.
 * Placed among the **top 1%** in NSEP (National Standard Examination in Physics) 2016-17 conducted by IAPT (Indian Association of Physics Teachers) out of **44,174** students.
 
+------
+
 Positions of Responsibility
 ======
 ## Teaching Assistant | _Purdue University, West Lafayette_
@@ -87,6 +89,7 @@ _May 2019 – May 2020_
 * Lead a 7-member team in organizing placement activities for 40+ students of Aerospace Engineering.
 * Achieved the best campus placements among all the IITs, with an increment in offers by **30\%**.
 
+------
 
 Technical Skills
 ======
@@ -95,12 +98,16 @@ Technical Skills
 * **Microsoft Apps**: MS PowerPoint, MS Excel, MS Word
 * **Experiments**: DIC (Digital Image Correlation), MTS, AFP (Automated Fiber Placement)
 
+------
+
 Publications
 ======
   <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
-  
+
+------
+
 Talks
 ======
   <ul>{% for post in site.talks reversed %}
