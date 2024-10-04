@@ -15,12 +15,12 @@ Education
 * M.S. in Aeronautics and Astronautics, Purdue University , 2023
 * B.Tech (Hons). in Aerospace Engineering, Indian Institute of Technology, Madras, 2021
 
+------
 
 Work experience
 ======
 
-**Graduate Research**: *August 2021 – Ongoing*
-------
+### **Graduate Research**: *August 2021 – Ongoing*
 #### Supervisor: [Dr.Dianyun Zhang](https://www.purdue.edu/cmsc/tech-area-bio/zhang.php), Associate Professor, School of Aeronautics & Astronautics, Purdue University ####
   * Conducting advanced research on the progressive damage of polymer matrix composite materials using the smeared crack approach, a continuum method.
   * Investigated impact of manufacturing defects on the damage progression of composite materials.
@@ -47,6 +47,7 @@ Work experience
   * It was observed that use of Neural Network models **decreased** the computation time **by several orders** of magnitude and performs well when anomalous data is provided.
   * For small data sets the absolute error percentage was as low as **0.055 %** multi-variate linear regression model.
 
+------
 
 Scholastic Achievements
 ======
