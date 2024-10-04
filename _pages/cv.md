@@ -15,8 +15,6 @@ Education
 * M.S. in Aeronautics and Astronautics, Purdue University , 2023
 * B.Tech (Hons). in Aerospace Engineering, Indian Institute of Technology, Madras, 2021
 
-___
-
 
 Work experience
 ======
