@@ -18,7 +18,9 @@ Education
 
 Work experience
 ======
-### **Graduate Research**: *August 2021 – Ongoing*
+
+**Graduate Research**: *August 2021 – Ongoing*
+------
 #### Supervisor: [Dr.Dianyun Zhang](https://www.purdue.edu/cmsc/tech-area-bio/zhang.php), Associate Professor, School of Aeronautics & Astronautics, Purdue University ####
   * Conducting advanced research on the progressive damage of polymer matrix composite materials using the smeared crack approach, a continuum method.
   * Investigated impact of manufacturing defects on the damage progression of composite materials.
