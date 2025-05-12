@@ -11,7 +11,7 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Aeronautics and Astronautics, Purdue University , 2025 (expected)
+* Ph.D in Aeronautics and Astronautics, Purdue University , 2026 (expected)
 * M.S. in Aeronautics and Astronautics, Purdue University , 2023
 * B.Tech (Hons). in Aerospace Engineering, Indian Institute of Technology, Madras, 2021
 
