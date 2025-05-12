@@ -27,11 +27,10 @@ Work experience
   * Developed UMATs on ABAQUS for the smeared crack constitutive law in isotropic and orthotropic materials.
   * Designing and preparing to conduct validation experiments, including 4-point bending tests, to compare experimental results with simulation predictions.
 
-### **Summer Internship at Sandia National Labs**: *June 2025 – August 2025*
-#### Supervisor: Dr. ????? , SNL, Albuquerque, New Mexico ####
-  * one
-  * two
-  * three
+### **Summer Internship at NOMAD Research Institute**: *June 2025 – August 2025*
+#### Supervisor: Dr. ????? , Sandia National Labs (SNL), Albuquerque, New Mexico ####
+  * Project: **“Bolted Joint Friction Modeling Under Shock”**
+  * Mentors: Colin Loeffler (SNL), Adam Bouma (SNL), Christie Crandall (SNL), Matt Brake (Rice), Dave Soine (SNL) and Chris Laursen (SNL)
 
 ### **Summer Internship at GE Aerospace**: *June 2024 – August 2024*
 #### Supervisor: Dr. Li Zheng, GE Aerospace, Niskayuna, New York ####
