@@ -98,7 +98,7 @@ such as Tensile tests, Bending, Torsion and Shear tests.
 _May 2019 – May 2020_
 * Part of a student-run body of **170** members for a year, handled the placement process for **1200+** students.
 * Lead a 7-member team in organizing placement activities for 40+ students of Aerospace Engineering.
-* Achieved the best campus placements among all the IITs, with an increment in offers by **30\%**.
+* Achieved the best campus placements among all the IITs, with an increment in offers by **30 %**.
 
 ------
 
