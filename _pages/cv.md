@@ -22,22 +22,28 @@ Work experience
 
 ### **Graduate Research**: *August 2021 – Ongoing*
 #### Supervisor: [Dr.Dianyun Zhang](https://www.purdue.edu/cmsc/tech-area-bio/zhang.php), Associate Professor, School of Aeronautics & Astronautics, Purdue University ####
-  * Conducting advanced research on the progressive damage of polymer matrix composite materials using the smeared crack approach, a continuum method.
-  * Investigated impact of manufacturing defects on the damage progression of composite materials.
-  * Developed UMATs on ABAQUS for the smeared crack constitutive law in isotropic and orthotropic materials.
-  * Designing and preparing to conduct validation experiments, including 4-point bending tests, to compare experimental results with simulation predictions.
+  * Derived and developed the incremental formulation for SCA (smeared crack approach) a continuum damage model that can capture different modes of failure such as in-plane failure, out-of-plane failure, and interlaminar failure.
+  * Developed and implemented custom UMATs in ABAQUS for progressive damage behavior \& manufacturing of composites.
+  * Used the above formulation on microscale RVE generated using random packing algorithm to create large datasets and simulate thermomechanical effects of cure cycle using the CHILE model.
+  * Executed 4-point bending experiments of curved L shape laminates validating simulations with the DIC results.
+  * Currently working on the optimization of cure cycle to achiever superior strength properties using the above framework.
 
 ### **Summer Internship at NOMAD Research Institute**: *June 2025 – August 2025*
-#### Supervisor: Dr. ????? , Sandia National Labs (SNL), Albuquerque, New Mexico ####
-  * Project: **“Bolted Joint Friction Modeling Under Shock”**
-  * Mentors: Colin Loeffler (SNL), Adam Bouma (SNL), Christie Crandall (SNL), Matt Brake (Rice), Dave Soine (SNL) and Chris Laursen (SNL)
+#### Supervisor: : Dr. Adam Bouma, Dr. Christie Crandall, Dr. Colin Loeffler, Dr. Matt Brake , Sandia National Labs (SNL), Albuquerque, New Mexico ####
+  * Project: **“Bolted Joint Friction Modeling Under Shock Loading”**
+  * One among the 12 graduate students selected for the highly competitive 8-week NOMAD internship program.
+  * Simulated shock and tension load cases in Kolsky bar tests for bolted joint coupons using in-house FEM tools of Sandia.
+  * Developed Python scripts for automated mesh node tracking of fiducial points for direct comparison with experiments.
+  * Were able to predict pre-peak behavior in velocity profiles of transmitted bar with close to 95\% accuracy.
+  * Submitted a conference paper to IMAC 2026 with our findings on the shock test simulations and experimental validation.
 
 ### **Summer Internship at GE Aerospace**: *June 2024 – August 2024*
 #### Supervisor: Dr. Li Zheng, GE Aerospace, Niskayuna, New York ####
   * One of the **7** Ph.D. research interns selected for the GE fellow internship 11 week program.
-  * Conducted extensive literature review to inform project development and innovation.
-  * Developed parametric codes for simulations in ANSYS Mechanical APDL to reduce the time spent on modeling.
-  * Drafted a comprehensive standard operating procedure report to characterize the thermo-mechanical properties of a particular material from experiments.
+  * Worked on project involving composite part design using shape memory alloys for aerospace structural applications.
+  * Developed parametric codes for simulations using ANSYS APDL, optimizing design for expected performance.
+  * Created 4 designs that showed different laminate behavior based on the placement of SMA strips used to actuate them.
+  * Authored SOPs and documentation for experimental characterization of manufacturing and material behavior of SMAs.
 
 ### **Undergraduate Research**: *September 2020 – May 2021*
 #### Supervisor: Professor [Dr. K. V. Nagendra Gopal](http://www.ae.iitm.ac.in/~gopal/ngopal.html), Department of Aerospace Engineering, Indian Institute of Technology, Madras ####
