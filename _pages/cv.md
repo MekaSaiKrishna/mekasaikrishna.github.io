@@ -12,8 +12,11 @@ redirect_from:
 Education
 ======
 * Ph.D in Aeronautics and Astronautics, Purdue University , 2026 (expected)
+  * GPA: 3.61   
 * M.S. in Aeronautics and Astronautics, Purdue University , 2023
+  * GPA: 3.71 
 * B.Tech (Hons). in Aerospace Engineering, Indian Institute of Technology, Madras, 2021
+  * GPA: 9.01 
 
 ------
 
