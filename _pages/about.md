@@ -39,6 +39,6 @@ What is this website for even?
 
 🤝 Reach out if you are interested in discussing my work, potential collaborations, give feedback, or maybe just have a casual chat over zoom
 
-
+![](/images/collaborate-gif.gif)
 
 
