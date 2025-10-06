@@ -24,7 +24,7 @@ Work experience
 ======
 
 ### **Graduate Research**: *August 2021 – Ongoing*
-#### Supervisor: [Dr.Dianyun Zhang](https://www.purdue.edu/cmsc/tech-area-bio/zhang.php), Associate Professor, School of Aeronautics & Astronautics, Purdue University ####
+#### Supervisor: [Dr.Dianyun Zhang](https://www.linkedin.com/in/dianyun-zhang-30144a62/), Associate Professor, School of Aeronautics & Astronautics, Purdue University ####
   * Derived and developed the incremental formulation for SCA (smeared crack approach) a continuum damage model that can capture different modes of failure such as in-plane failure, out-of-plane failure, and interlaminar failure.
   * Developed and implemented custom UMATs in ABAQUS for progressive damage behavior \& manufacturing of composites.
   * Used the above formulation on microscale RVE generated using random packing algorithm to create large datasets and simulate thermomechanical effects of cure cycle using the CHILE model.
@@ -32,7 +32,7 @@ Work experience
   * Currently working on the optimization of cure cycle to achiever superior strength properties using the above framework.
 
 ### **Summer Internship at NOMAD Research Institute**: *June 2025 – August 2025*
-#### Supervisor: : Dr. Adam Bouma, Dr. Christie Crandall, Dr. Colin Loeffler, Dr. Matt Brake , Sandia National Labs (SNL), Albuquerque, New Mexico ####
+#### Supervisor: : [Dr. Adam Bouma](https://www.linkedin.com/in/adam-bouma-a27051126/), [Dr. Christie Crandall](https://www.linkedin.com/in/christie-crandall-9b09b1113/), [Dr. Colin Loeffler](https://www.linkedin.com/in/colin-loeffler-63770841/), [Dr. Matt Brake](https://www.linkedin.com/in/mbrake/) , Sandia National Labs (SNL), Albuquerque, New Mexico ####
   * Project: **“Bolted Joint Friction Modeling Under Shock Loading”**
   * One among the 12 graduate students selected for the highly competitive 8-week NOMAD internship program.
   * Simulated shock and tension load cases in Kolsky bar tests for bolted joint coupons using in-house FEM tools of Sandia.
@@ -41,7 +41,7 @@ Work experience
   * Submitted a conference paper to IMAC 2026 with our findings on the shock test simulations and experimental validation.
 
 ### **Summer Internship at GE Aerospace**: *June 2024 – August 2024*
-#### Supervisor: Dr. Li Zheng, GE Aerospace, Niskayuna, New York ####
+#### Supervisor: [Dr. Agniprobho Mazumder](https://www.linkedin.com/in/agniprobhomazumder/), GE Aerospace, Niskayuna, New York ####
   * One of the **7** Ph.D. research interns selected for the GE fellow internship 11 week program.
   * Worked on project involving composite part design using shape memory alloys for aerospace structural applications.
   * Developed parametric codes for simulations using ANSYS APDL, optimizing design for expected performance.
@@ -54,7 +54,7 @@ Work experience
   * Coordinated with the advisor and worked entirely remotely due to the pandemic, yet made significant progress while adapting to the situation
 
 ### **Summer Undergraduate Research Internship**: *May 2019 – July 2019*
-#### Supervisor: Saransh Jain, NAL (CSIR - National Aerospace Laboratories), Bengaluru, India ####
+#### Supervisor: [Saransh Jain](https://www.linkedin.com/in/saransh-jain-a604b613/), NAL (CSIR - National Aerospace Laboratories), Bengaluru, India ####
   * Worked in the area of _Structural Health Monitoring_ of Aerospace Structures.
   * Used various Machine learning models to predict loads acting on complicated cantilever composite box by feeding the model strain values to the model measured using FBG (Fibre Bragg Grating) sensors.
   * Compared the results acquired from Regression models and Artificial Neural Network models using MATLAB: Statistics & Machine Learning toolbox and MATLAB: Neural Network toolbox
