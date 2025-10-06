@@ -23,7 +23,7 @@ Education
 Work experience
 ======
 
-### **Graduate Research**: *August 2021 – May 2026*
+### **Ph.D. Graduate Research**: *August 2021 – May 2026*
 #### Supervisor: [Dr. Dianyun Zhang](https://www.linkedin.com/in/dianyun-zhang-30144a62/), Associate Professor, School of Aeronautics & Astronautics, Purdue University ####
   * Derived and developed the incremental formulation for SCA (smeared crack approach) a continuum damage model that can capture different modes of failure such as in-plane failure, out-of-plane failure, and interlaminar failure.
   * Developed and implemented custom UMATs in ABAQUS for progressive damage behavior \& manufacturing of composites.
