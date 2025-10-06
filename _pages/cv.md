@@ -23,7 +23,7 @@ Education
 Work experience
 ======
 
-### **Graduate Research**: *August 2021 – Ongoing*
+### **Graduate Research**: *August 2021 – May 2026*
 #### Supervisor: [Dr. Dianyun Zhang](https://www.linkedin.com/in/dianyun-zhang-30144a62/), Associate Professor, School of Aeronautics & Astronautics, Purdue University ####
   * Derived and developed the incremental formulation for SCA (smeared crack approach) a continuum damage model that can capture different modes of failure such as in-plane failure, out-of-plane failure, and interlaminar failure.
   * Developed and implemented custom UMATs in ABAQUS for progressive damage behavior \& manufacturing of composites.
@@ -32,7 +32,7 @@ Work experience
   * Currently working on the optimization of cure cycle to achiever superior strength properties using the above framework.
 
 ### **Summer Internship at NOMAD Research Institute**: *June 2025 – August 2025*
-#### Supervisor: : [Dr. Adam Bouma](https://www.linkedin.com/in/adam-bouma-a27051126/), [Dr. Christie Crandall](https://www.linkedin.com/in/christie-crandall-9b09b1113/), [Dr. Colin Loeffler](https://www.linkedin.com/in/colin-loeffler-63770841/), [Dr. Matt Brake](https://www.linkedin.com/in/mbrake/) , Sandia National Labs (SNL), Albuquerque, New Mexico ####
+#### Supervisor: : [Dr. Adam Bouma](https://www.linkedin.com/in/adam-bouma-a27051126/), [Dr. Christie Crandall](https://www.linkedin.com/in/christie-crandall-9b09b1113/), [Dr. Colin Loeffler](https://www.linkedin.com/in/colin-loeffler-63770841/), [Dr. Matt Brake](https://www.linkedin.com/in/mbrake/), Sandia National Labs (SNL), Albuquerque, New Mexico ####
   * Project: **“Bolted Joint Friction Modeling Under Shock Loading”**
   * One among the 12 graduate students selected for the highly competitive 8-week NOMAD internship program.
   * Simulated shock and tension load cases in Kolsky bar tests for bolted joint coupons using in-house FEM tools of Sandia.
