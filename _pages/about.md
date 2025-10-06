@@ -1,14 +1,13 @@
 ---
 permalink: /
-title: "Writing"
+title: "About me"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-About me
-======
+
 I am a final-year PhD candidate in Aerospace Engineering at Purdue University, where my research focuses on developing advanced computational methods to model the progressive damage of polymer matrix composite materials. 
 My work builds on the smeared crack approach and explores how manufacturing defects influence structural performance, combining high-fidelity finite element analysis in ABAQUS with experimental validation across different length scales.
 I work in [Dr. Dianyun Zhang's](https://www.purdue.edu/cmsc/tech-area-bio/zhang.php) lab at the [Composite Manufacturing and Simulation Center (CMSC)](https://www.purdue.edu/cmsc/).
