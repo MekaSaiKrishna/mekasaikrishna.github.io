@@ -9,7 +9,7 @@ redirect_from:
 
 
 I am a final-year PhD candidate in Aerospace Engineering at Purdue University, where my research focuses on developing advanced computational methods to model the progressive damage of polymer matrix composite materials. 
-My work builds on the smeared crack approach and explores how manufacturing defects influence structural performance, combining high-fidelity finite element analysis in ABAQUS with experimental validation across different length scales.
+My work builds on the smeared crack approach and explores how manufacturing defects influence structural performance, combining high-fidelity finite element analysis with experimental validation across different length scales.
 I work in [Dr. Dianyun Zhang's](https://www.purdue.edu/cmsc/tech-area-bio/zhang.php) lab at the [Composite Manufacturing and Simulation Center (CMSC)](https://www.purdue.edu/cmsc/).
 
 Beyond my core research, I am deeply interested in computational mechanics, failure analysis, multiscale modeling, and materials in general. 
@@ -40,14 +40,5 @@ What is this website for even?
 🤝 Reach out if you are interested in discussing my work, potential collaborations, give feedback, or maybe just have a casual chat over zoom
 
 
-
-Getting started
-======
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Fork [this repository](https://github.com/academicpages/academicpages.github.io) by clicking the "fork" button in the top right. 
-1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](http://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
-1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
 
 
