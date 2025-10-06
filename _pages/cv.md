@@ -37,7 +37,7 @@ Work experience
   * One among the 12 graduate students selected for the highly competitive 8-week NOMAD internship program.
   * Simulated shock and tension load cases in Kolsky bar tests for bolted joint coupons using in-house FEM tools of Sandia.
   * Developed Python scripts for automated mesh node tracking of fiducial points for direct comparison with experiments.
-  * Were able to predict pre-peak behavior in velocity profiles of transmitted bar with close to 95\% accuracy.
+  * Were able to predict pre-peak behavior in velocity profiles of transmitted bar with close to 95 % accuracy.
   * Submitted a conference paper to IMAC 2026 with our findings on the shock test simulations and experimental validation.
 
 ### **Summer Internship at GE Aerospace**: *June 2024 – August 2024*
