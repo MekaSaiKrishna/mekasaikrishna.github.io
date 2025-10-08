@@ -21,7 +21,7 @@ main:
 #    url: /portfolio/
     
   - title: "Writing"
-#    url: /cv/
+   url: /writing/
     
   - title: "CV"
     url: /cv/
