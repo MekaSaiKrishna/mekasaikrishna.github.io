@@ -3,7 +3,7 @@ title: "Effects of Manufacturing Processes on Progressive Damage of Composites"
 collection: publications
 category: conferences
 permalink: /publication/2009-10-01-paper-title-number-1
-excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
+excerpt: 'Coupling effects of curing with progressive damage analysis at the microstructure level (RVE).'
 date: 2023-06-19
 venue: 'ASME Aerospace Structures, Structural Dynamics, and Materials Conference'
 slidesurl: 'http://academicpages.github.io/files/slides1.pdf'
