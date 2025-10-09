@@ -18,6 +18,6 @@ It is essential to consider the impact of manufacturing processes, which introdu
 To address these complexities, a finite element simulation is employed, integrating manufacturing effects and adopting a semi-discrete damage model. 
 Within this model, matrix failure within the plies is delineated using a smeared crack approach, whereby crack directionality aligns passively with fiber orientation within each ply. Furthermore, the smeared crack approach is extended to model damage occurring at ply interfaces.
 
-This comprehensive investigation is done for the layup sequence: [45°/0°/−45°/90°]3S - symmetric and balanced laminate. 
+This comprehensive investigation is done for the layup sequence: [45°/0°/−45°/90°]<sub>3S</sub> - symmetric and balanced laminate. 
 Experimental validation is achieved through a 4-point bending test by adhering close to ASTM D6415 standards, gauging the curved beam strength/inter-laminar strength of fiber-reinforced polymer matrix composites. 
 The utilization of DIC images aids in the systematic observation and comprehension of failure modes across various scenarios.
