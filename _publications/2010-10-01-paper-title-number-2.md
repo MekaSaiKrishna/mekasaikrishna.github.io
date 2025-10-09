@@ -1,14 +1,14 @@
 ---
-title: "Paper Title Number 2"
+title: "Progressive Damage Analysis of Curved Composite Laminates Incorporating Effects of Manufacturing Using a Semi-Discrete Damage Model"
 collection: publications
-category: manuscripts
+category: conferences
 permalink: /publication/2010-10-01-paper-title-number-2
-excerpt: 'This paper is about the number 2. The number 3 is left for future work.'
-date: 2010-10-01
-venue: 'Journal 1'
-slidesurl: 'http://academicpages.github.io/files/slides2.pdf'
-paperurl: 'http://academicpages.github.io/files/paper2.pdf'
-citation: 'Your Name, You. (2010). &quot;Paper Title Number 2.&quot; <i>Journal 1</i>. 1(2).'
+excerpt: 'Understanding the effects of curing at the macroscale level along with progressive damage analysis for the L-shaped composite part.'
+date: 2023-06-19
+venue: 'ASME Aerospace Structures, Structural Dynamics, and Materials Conference'
+slidesurl: 'http://academicpages.github.io/files/slides1.pdf'
+paperurl: 'https://doi.org/10.1115/SSDM2024-121556'
+citation: 'Meka, SK, Enos, R, Roach, J, & Zhang, D. "Progressive Damage Analysis of Curved Composite Laminates Incorporating Effects of Manufacturing Using a Semi-Discrete Damage Model." Proceedings of the ASME 2024 Aerospace Structures, Structural Dynamics, and Materials Conference. ASME 2024 Aerospace Structures, Structural Dynamics, and Materials Conference. Renton, Washington, USA. April 29–May 1, 2024. V001T03A005. ASME.'
 ---
 
 The contents above will be part of a list of publications, if the user clicks the link for the publication than the contents of section will be rendered as a full page, allowing you to provide more information about the paper for the reader. When publications are displayed as a single page, the contents of the above "citation" field will automatically be included below this section in a smaller font.
