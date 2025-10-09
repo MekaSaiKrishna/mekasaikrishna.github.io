@@ -4,7 +4,7 @@ collection: publications
 category: conferences
 permalink: /publication/2010-10-01-paper-title-number-2
 excerpt: 'Understanding the effects of curing at the macroscale level along with progressive damage analysis for the L-shaped composite part.'
-date: 2023-06-19
+date: 2024-04-29
 venue: 'ASME Aerospace Structures, Structural Dynamics, and Materials Conference'
 slidesurl: 'http://academicpages.github.io/files/slides1.pdf'
 paperurl: 'https://doi.org/10.1115/SSDM2024-121556'
