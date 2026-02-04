@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Material Property Piecewise Plotter</title>
+    
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+    
+    <style>
+        body { 
+            margin: 0; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        #plot-target { 
+            flex: 1; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            background-color: white;
+            padding: 20px;
+        }
+
+        .sidebar {
+            width: 300px;
+            background: #fdfdfd;
+            border-left: 1px solid #e1e4e8;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            overflow-y: auto;
+            box-shadow: -2px 0 5px rgba(0,0,0,0.05);
+        }
+
+        .input-group { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 8px; 
+        }
+
+        label { 
+            font-size: 1rem; 
+            color: #24292e; 
+            font-weight: 500;
+        }
+
+        input[type="number"] { 
+            padding: 10px; 
+            border: 1px solid #d1d5da; 
+            border-radius: 6px; 
+            font-size: 1rem;
+            background: #fff;
+        }
+
+        .slider-container {
+            margin-top: 10px;
+            padding-top: 20px;
+            border-top: 1px solid #e1e4e8;
+        }
+
+        h3 { 
+            margin: 0 0 10px 0; 
+            font-size: 1.25rem; 
+            color: #1b1f23;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="plot-target">
+        <p>Loading Computational Environment...</p>
+    </div>
+
+    <div class="sidebar">
+        <h3>Parameters</h3>
+        
+        <div class="input-group">
+            <label>\( E_r^0 \) (Initial)</label>
+            <input type="number" id="Er0" value="100.0" step="0.1">
+        </div>
+
+        <div class="input-group">
+            <label>\( E_r^\infty \) (Final)</label>
+            <input type="number" id="ErInf" value="50.0" step="0.1">
+        </div>
+
+        <div class="input-group">
+            <label>\( T_{C1} \) (Start Temp)</label>
+            <input type="number" id="TC1" value="50.0" step="0.1">
+        </div>
+
+        <div class="input-group">
+            <label>\( T_{C2} \) (End Temp)</label>
+            <input type="number" id="TC2" value="150.0" step="0.1">
+        </div>
+
+        <div class="slider-container">
+            <label>\( T^* \) Range Limit: <span id="t-max-val">200</span></label>
+            <input type="range" id="t_max_slider" min="160" max="1000" value="200" step="10" style="width: 100%;">
+        </div>
+    </div>
+
+    <py-config>
+        packages = ["matplotlib", "numpy"]
+    </py-config>
+
+    <script type="py">
+import matplotlib.pyplot as plt
+import numpy as np
+from pyscript import display, document
+from pyodide.ffi import create_proxy
+
+def compute_and_plot(event=None):
+    plt.close('all')
+    
+    try:
+        e0 = float(document.querySelector("#Er0").value)
+        e_inf = float(document.querySelector("#ErInf").value)
+        tc1 = float(document.querySelector("#TC1").value)
+        tc2 = float(document.querySelector("#TC2").value)
+        t_max = float(document.querySelector("#t_max_slider").value)
+        document.querySelector("#t-max-val").innerText = str(int(t_max))
+    except (ValueError, TypeError):
+        return
+
+    t_star = np.linspace(0, t_max, 1000)
+    
+    # Piecewise Logic
+    er = np.piecewise(t_star, 
+        [t_star <= tc1, (t_star > tc1) & (t_star < tc2), t_star >= tc2],
+        [lambda t: e0, 
+         lambda t: e0 + ((t - tc1) / (tc2 - tc1)) * (e_inf - e0), 
+         lambda t: e_inf]
+    )
+
+    fig, ax = plt.subplots(figsize=(7, 5), dpi=100)
+    ax.plot(t_star, er, color='#d73a49', lw=2.5, label='$E_r(T^*)$')
+    
+    # Visual cues for transition points
+    ax.axvline(tc1, color='#6a737d', linestyle='--', alpha=0.4, label='$T_{C1}$')
+    ax.axvline(tc2, color='#6a737d', linestyle='--', alpha=0.4, label='$T_{C2}$')
+    
+    ax.set_title("Material Property Transition Model", fontsize=14, fontweight='bold', pad=15)
+    ax.set_xlabel("Temperature $T^*$", fontsize=11)
+    ax.set_ylabel("Property $E_r$", fontsize=11)
+    ax.grid(True, linestyle=':', alpha=0.6)
+    ax.legend(frameon=True, shadow=True)
+    
+    plt.tight_layout()
+
+    target = document.querySelector("#plot-target")
+    target.innerHTML = ""
+    display(fig, target="plot-target")
+    plt.close(fig)
+
+update_proxy = create_proxy(compute_and_plot)
+for input_id in ["Er0", "ErInf", "TC1", "TC2", "t_max_slider"]:
+    document.querySelector(f"#{input_id}").addEventListener("input", update_proxy)
+
+compute_and_plot()
+    </script>
+</body>
+</html>
