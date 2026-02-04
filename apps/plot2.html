@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+    <style>
+        body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        .controls { 
+            padding: 20px; 
+            background: #fdfdfd; 
+            border-bottom: 1px solid #eee;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+        }
+        .input-group { display: flex; flex-direction: column; gap: 5px; }
+        label { font-size: 0.85rem; font-weight: 600; color: #444; }
+        input[type="number"] { padding: 6px; border: 1px solid #ccc; border-radius: 4px; }
+        .slider-container { grid-column: 1 / -1; padding-top: 10px; border-top: 1px solid #eee; }
+        #plot-target { display: flex; justify-content: center; padding-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="controls">
+        <div class="input-group">
+            <label>E_r^0 (Initial)</label>
+            <input type="number" id="Er0" value="100.0" step="0.1">
+        </div>
+        <div class="input-group">
+            <label>E_r^inf (Final)</label>
+            <input type="number" id="ErInf" value="50.0" step="0.1">
+        </div>
+        <div class="input-group">
+            <label>T_C1 (Start Temp)</label>
+            <input type="number" id="TC1" value="50.0" step="0.1">
+        </div>
+        <div class="input-group">
+            <label>T_C2 (End Temp)</label>
+            <input type="number" id="TC2" value="150.0" step="0.1">
+        </div>
+        
+        <div class="slider-container">
+            <label>Independent Variable (T* Range Limit): <span id="t-max-val">200</span></label>
+            <input type="range" id="t_max_slider" min="160" max="500" value="200" step="10" style="width: 100%;">
+        </div>
+    </div>
+
+    <div id="plot-target"></div>
+
+    <py-config>
+        packages = ["matplotlib", "numpy"]
+    </py-config>
+
+    <script type="py">
+import matplotlib.pyplot as plt
+import numpy as np
+from pyscript import display, document
+from pyodide.ffi import create_proxy
+
+def compute_piecewise(event=None):
+    plt.close('all')
+    
+    # Read parameters from input boxes
+    try:
+        e0 = float(document.querySelector("#Er0").value)
+        e_inf = float(document.querySelector("#ErInf").value)
+        tc1 = float(document.querySelector("#TC1").value)
+        tc2 = float(document.querySelector("#TC2").value)
+        t_max = float(document.querySelector("#t_max_slider").value)
+        document.querySelector("#t-max-val").innerText = str(t_max)
+    except:
+        return # Skip calculation if inputs are invalid/empty
+
+    # Create T* array
+    t_star = np.linspace(0, t_max, 1000)
+    
+    # Vectorized Piecewise Function Implementation
+    # Er = e0 for T* <= tc1
+    # Er = e0 + ((T*-tc1)/(tc2-tc1))*(e_inf-e0) for tc1 < T* < tc2
+    # Er = e_inf for tc2 <= T*
+    
+    er = np.piecewise(t_star, 
+        [t_star <= tc1, (t_star > tc1) & (t_star < tc2), t_star >= tc2],
+        [lambda t: e0, 
+         lambda t: e0 + ((t - tc1) / (tc2 - tc1)) * (e_inf - e0), 
+         lambda t: e_inf]
+    )
+
+    # Plotting
+    fig, ax = plt.subplots(figsize=(7, 4.5), dpi=100)
+    ax.plot(t_star, er, color='#d33', lw=2.5, label='$E_r(T^*)$')
+    
+    # Visual cues for transition points
+    ax.axvline(tc1, color='gray', linestyle='--', alpha=0.5)
+    ax.axvline(tc2, color='gray', linestyle='--', alpha=0.5)
+    
+    ax.set_title("Piecewise Material Property Transition", fontsize=12, pad=15)
+    ax.set_xlabel("Temperature $T^*$", fontsize=10)
+    ax.set_ylabel("Property $E_r$", fontsize=10)
+    ax.grid(True, which='both', linestyle=':', alpha=0.6)
+    ax.legend()
+    
+    target = document.querySelector("#plot-target")
+    target.innerHTML = ""
+    display(fig, target="plot-target")
+    plt.close(fig)
+
+# Setup event listeners
+proxy = create_proxy(compute_piecewise)
+for input_id in ["Er0", "ErInf", "TC1", "TC2", "t_max_slider"]:
+    document.querySelector(f"#{input_id}").addEventListener("input", proxy)
+
+# Initial Render
+compute_piecewise()
+    </script>
+</body>
+</html>
