@@ -32,7 +32,7 @@ Material: 8552 Resin
 | $n$           | $2.74$                | —          |
 | $C$           | $43.1$                | —          |
 | $\alpha_{C0}$ | $-1.684$ | —          |
-| $\alpha_{CT}$ | $5.46 \times 10^{-3}$             | $^K^{-1}$ |
+| $\alpha_{CT}$ | $5.46 \times 10^{-3}$             | $K^{-1}$ |
 
 
 <iframe src="/apps/plot3.html" width="950px" height="700px" frameborder="0"></iframe>
