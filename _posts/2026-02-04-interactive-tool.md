@@ -6,4 +6,4 @@ tags: [Python, Simulation]
 ---
 Check out my interactive simulation below:
 
-<iframe src="/plot.html" width="100%" height="500px" frameborder="0"></iframe>
+<iframe src="/apps/plot.html" width="100%" height="500px" frameborder="0"></iframe>
