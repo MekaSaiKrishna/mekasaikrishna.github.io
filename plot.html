@@ -22,6 +22,7 @@ from pyscript import display, document
 from pyodide.ffi import create_proxy
 
 def compute_and_plot(event=None):
+        plt.close('all') # Clear everything first
         val = float(document.querySelector("#param").value)
         document.querySelector("#param-val").innerText = str(val)
         
