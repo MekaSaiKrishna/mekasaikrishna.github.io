@@ -9,3 +9,9 @@ Check out my interactive simulation below:
 <iframe src="/apps/plot.html" width="100%" height="500px" frameborder="0"></iframe>
 
 
+
+CHILE MODEL YOUNG'S MODULUS:
+
+<iframe src="/apps/plot2.html" width="100%" height="500px" frameborder="0"></iframe>
+
+
