@@ -3,12 +3,32 @@
 <head>
     <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
     <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+    <style>
+        .controls { 
+            padding: 15px; 
+            background: #f8f9fa; 
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        input[type="number"] { width: 60px; padding: 5px; border-radius: 4px; border: 1px solid #ccc; }
+    </style>
 </head>
 <body style="margin: 0; font-family: sans-serif;">
-    <div style="padding: 10px; background: #f8f9fa; border-bottom: 1px solid #ddd;">
-        <label>Frequency: <input type="range" id="param" min="1" max="20" value="5" step="0.5" style="width: 200px;"></label>
-        <span id="param-val">5.0</span>
+
+    <div class="controls">
+        <label>Freq ($\omega$): 
+            <input type="range" id="freq_slider" min="1" max="20" value="5" step="0.5">
+            <span id="freq-val">5.0</span>
+        </label>
+
+        <label>Integer Param ($N$): 
+            <input type="number" id="int_box" value="1" step="1">
+        </label>
     </div>
+
     <div id="plot-target"></div>
 
     <py-config>
@@ -22,30 +42,46 @@ from pyscript import display, document
 from pyodide.ffi import create_proxy
 
 def compute_and_plot(event=None):
-        plt.close('all') # Clear everything first
-        val = float(document.querySelector("#param").value)
-        document.querySelector("#param-val").innerText = str(val)
-        
-        t = np.linspace(0, 10, 500)
-        y = np.exp(-0.1 * val * t) * np.cos(val * t)
-        
-        # Create the figure
-        fig, ax = plt.subplots(figsize=(6, 4))
-        ax.plot(t, y, color='dodgerblue')
-        ax.set_title(f"Dynamic Response (w={val})")
-        
-        # Render it
-        target = document.querySelector("#plot-target")
-        target.innerHTML = ""
-        display(fig, target="plot-target")
-        
-        # --- THE FIX ---
-        # This tells Matplotlib to free up the memory for this specific figure
-        # after it has been displayed.
-        plt.close(fig)
+    plt.close('all')
+    
+    # 1. Get value from Slider
+    freq = float(document.querySelector("#freq_slider").value)
+    document.querySelector("#freq-val").innerText = str(freq)
+    
+    # 2. Get value from Integer Box
+    # We use int() to ensure it's an integer
+    try:
+        n_val = int(document.querySelector("#int_box").value)
+    except:
+        n_val = 1 # Fallback if box is empty
+    
+    # 3. Logic: Using both variables
+    t = np.linspace(0, 10, 500)
+    # y = n_val * damped_oscillation
+    y = n_val * np.exp(-0.1 * freq * t) * np.cos(freq * t)
+    
+    fig, ax = plt.subplots(figsize=(6, 4))
+    ax.plot(t, y, color='dodgerblue', lw=2)
+    ax.set_title(f"Response with N={n_val} and w={freq}")
+    ax.set_xlabel("Time (s)")
+    ax.grid(True, alpha=0.3)
+    
+    target = document.querySelector("#plot-target")
+    target.innerHTML = ""
+    display(fig, target="plot-target")
+    plt.close(fig)
 
+# Proxies for event listeners
 proxy = create_proxy(compute_and_plot)
-document.querySelector("#param").addEventListener("input", proxy)
+
+# Update on slider move
+document.querySelector("#freq_slider").addEventListener("input", proxy)
+# Update when the number in the box changes
+document.querySelector("#int_box").addEventListener("change", proxy)
+# Optional: also update as they type in the box
+document.querySelector("#int_box").addEventListener("input", proxy)
+
+# Initial run
 compute_and_plot()
     </script>
 </body>
