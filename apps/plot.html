@@ -1,1 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+</head>
+<body style="margin: 0; font-family: sans-serif;">
+    <div style="padding: 10px; background: #f8f9fa; border-bottom: 1px solid #ddd;">
+        <label>Frequency: <input type="range" id="param" min="1" max="20" value="5" step="0.5" style="width: 200px;"></label>
+        <span id="param-val">5.0</span>
+    </div>
+    <div id="plot-target"></div>
 
+    <py-config>
+        packages = ["matplotlib", "numpy"]
+    </py-config>
+
+    <script type="py">
+import matplotlib.pyplot as plt
+import numpy as np
+from pyscript import display, document
+from pyodide.ffi import create_proxy
+
+def compute_and_plot(event=None):
+        plt.close('all') # Clear everything first
+        val = float(document.querySelector("#param").value)
+        document.querySelector("#param-val").innerText = str(val)
+        
+        t = np.linspace(0, 10, 500)
+        y = np.exp(-0.1 * val * t) * np.cos(val * t)
+        
+        # Create the figure
+        fig, ax = plt.subplots(figsize=(6, 4))
+        ax.plot(t, y, color='dodgerblue')
+        ax.set_title(f"Dynamic Response (w={val})")
+        
+        # Render it
+        target = document.querySelector("#plot-target")
+        target.innerHTML = ""
+        display(fig, target="plot-target")
+        
+        # --- THE FIX ---
+        # This tells Matplotlib to free up the memory for this specific figure
+        # after it has been displayed.
+        plt.close(fig)
+
+proxy = create_proxy(compute_and_plot)
+document.querySelector("#param").addEventListener("input", proxy)
+compute_and_plot()
+    </script>
+</body>
+</html>
