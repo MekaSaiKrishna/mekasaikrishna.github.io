@@ -1,52 +1,117 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
+    <title>Piecewise Property Plotter</title>
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
     <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
     <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+    
     <style>
-        body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-        .controls { 
-            padding: 20px; 
-            background: #fdfdfd; 
-            border-bottom: 1px solid #eee;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 15px;
+        body { 
+            margin: 0; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
         }
-        .input-group { display: flex; flex-direction: column; gap: 5px; }
-        label { font-size: 0.85rem; font-weight: 600; color: #444; }
-        input[type="number"] { padding: 6px; border: 1px solid #ccc; border-radius: 4px; }
-        .slider-container { grid-column: 1 / -1; padding-top: 10px; border-top: 1px solid #eee; }
-        #plot-target { display: flex; justify-content: center; padding-top: 10px; }
+        
+        /* Left Side: Plot Area */
+        #plot-target { 
+            flex: 1; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            background-color: white;
+            padding: 10px;
+        }
+
+        /* Right Side: Controls Sidebar */
+        .sidebar {
+            width: 280px;
+            background: #f8f9fa;
+            border-left: 1px solid #ddd;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            overflow-y: auto;
+        }
+
+        .input-group { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 8px; 
+        }
+
+        label { 
+            font-size: 1rem; 
+            color: #333; 
+            font-weight: 500;
+        }
+
+        input[type="number"] { 
+            padding: 8px; 
+            border: 1px solid #ccc; 
+            border-radius: 4px; 
+            font-size: 1rem;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .slider-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        h3 { margin-top: 0; font-size: 1.2rem; color: #2c3e50; border-bottom: 2px solid #eee; padding-bottom: 10px; }
     </style>
 </head>
 <body>
 
-    <div class="controls">
-        <div class="input-group">
-            <label>E_r^0 (Initial)</label>
-            <input type="number" id="Er0" value="100.0" step="0.1">
-        </div>
-        <div class="input-group">
-            <label>E_r^inf (Final)</label>
-            <input type="number" id="ErInf" value="50.0" step="0.1">
-        </div>
-        <div class="input-group">
-            <label>T_C1 (Start Temp)</label>
-            <input type="number" id="TC1" value="50.0" step="0.1">
-        </div>
-        <div class="input-group">
-            <label>T_C2 (End Temp)</label>
-            <input type="number" id="TC2" value="150.0" step="0.1">
-        </div>
-        
-        <div class="slider-container">
-            <label>Independent Variable (T* Range Limit): <span id="t-max-val">200</span></label>
-            <input type="range" id="t_max_slider" min="160" max="500" value="200" step="10" style="width: 100%;">
-        </div>
+    <div id="plot-target">
+        <p>Loading Computational Environment...</p>
     </div>
 
-    <div id="plot-target"></div>
+    <div class="sidebar">
+        <h3>Parameters</h3>
+        
+        <div class="input-group">
+            <label>\( E_r^0 \) (Initial Modulus)</label>
+            <input type="number" id="Er0" value="100.0" step="0.1">
+        </div>
+
+        <div class="input-group">
+            <label>\( E_r^\infty \) (Final Modulus)</label>
+            <input type="number" id="ErInf" value="40.0" step="0.1">
+        </div>
+
+        <div class="input-group">
+            <label>\( T_{C1} \) (Transition Start)</label>
+            <input type="number" id="TC1" value="60.0" step="0.1">
+        </div>
+
+        <div class="input-group">
+            <label>\( T_{C2} \) (Transition End)</label>
+            <input type="number" id="TC2" value="140.0" step="0.1">
+        </div>
+
+        <div class="input-group" style="margin-top: 10px; padding-top: 15px; border-top: 1px solid #ddd;">
+            <div class="slider-header">
+                <span>View Range \( T^* \)</span>
+                <span id="t-max-val">200</span>
+            </div>
+            <input type="range" id="t_max_slider" min="150" max="1000" value="200" step="10">
+        </div>
+    </div>
 
     <py-config>
         packages = ["matplotlib", "numpy"]
@@ -58,28 +123,30 @@ import numpy as np
 from pyscript import display, document
 from pyodide.ffi import create_proxy
 
-def compute_piecewise(event=None):
+def run_simulation(event=None):
+    # Prevent memory leaks by closing previous figures
     plt.close('all')
     
-    # Read parameters from input boxes
     try:
+        # Fetch values from DOM
         e0 = float(document.querySelector("#Er0").value)
         e_inf = float(document.querySelector("#ErInf").value)
         tc1 = float(document.querySelector("#TC1").value)
         tc2 = float(document.querySelector("#TC2").value)
         t_max = float(document.querySelector("#t_max_slider").value)
-        document.querySelector("#t-max-val").innerText = str(t_max)
-    except:
-        return # Skip calculation if inputs are invalid/empty
+        
+        # Update slider label
+        document.querySelector("#t-max-val").innerText = str(int(t_max))
+    except (ValueError, TypeError):
+        return
 
-    # Create T* array
+    # Generate Temperature Data
     t_star = np.linspace(0, t_max, 1000)
     
-    # Vectorized Piecewise Function Implementation
-    # Er = e0 for T* <= tc1
-    # Er = e0 + ((T*-tc1)/(tc2-tc1))*(e_inf-e0) for tc1 < T* < tc2
-    # Er = e_inf for tc2 <= T*
-    
+    # Piecewise Logic as defined in user image
+    # Condition 1: T <= TC1 -> Er = e0
+    # Condition 2: TC1 < T < TC2 -> Linear interpolation
+    # Condition 3: TC2 <= T -> Er = e_inf
     er = np.piecewise(t_star, 
         [t_star <= tc1, (t_star > tc1) & (t_star < tc2), t_star >= tc2],
         [lambda t: e0, 
@@ -87,32 +154,41 @@ def compute_piecewise(event=None):
          lambda t: e_inf]
     )
 
-    # Plotting
-    fig, ax = plt.subplots(figsize=(7, 4.5), dpi=100)
-    ax.plot(t_star, er, color='#d33', lw=2.5, label='$E_r(T^*)$')
+    # Plot Setup
+    fig, ax = plt.subplots(figsize=(7, 5), dpi=100)
+    ax.plot(t_star, er, color='#2c3e50', lw=3, label='$E_r(T^*)$')
     
-    # Visual cues for transition points
-    ax.axvline(tc1, color='gray', linestyle='--', alpha=0.5)
-    ax.axvline(tc2, color='gray', linestyle='--', alpha=0.5)
+    # Vertical lines to highlight transition region
+    ax.axvline(tc1, color='red', linestyle='--', alpha=0.3, label='$T_{C1}$')
+    ax.axvline(tc2, color='red', linestyle='--', alpha=0.3, label='$T_{C2}$')
     
-    ax.set_title("Piecewise Material Property Transition", fontsize=12, pad=15)
-    ax.set_xlabel("Temperature $T^*$", fontsize=10)
-    ax.set_ylabel("Property $E_r$", fontsize=10)
-    ax.grid(True, which='both', linestyle=':', alpha=0.6)
-    ax.legend()
+    # Labeling
+    ax.set_title("Piecewise Material Property Model", fontsize=14, fontweight='bold')
+    ax.set_xlabel("Temperature $T^*$", fontsize=12)
+    ax.set_ylabel("Modulus $E_r$", fontsize=12)
+    ax.grid(True, linestyle=':', alpha=0.6)
+    ax.legend(loc='best')
     
+    plt.tight_layout()
+
+    # Render to HTML
     target = document.querySelector("#plot-target")
     target.innerHTML = ""
     display(fig, target="plot-target")
     plt.close(fig)
 
-# Setup event listeners
-proxy = create_proxy(compute_piecewise)
-for input_id in ["Er0", "ErInf", "TC1", "TC2", "t_max_slider"]:
-    document.querySelector(f"#{input_id}").addEventListener("input", proxy)
+# Create event proxy
+update_proxy = create_proxy(run_simulation)
 
-# Initial Render
-compute_piecewise()
+# Attach listeners to all inputs
+ids = ["Er0", "ErInf", "TC1", "TC2", "t_max_slider"]
+for input_id in ids:
+    element = document.querySelector(f"#{input_id}")
+    # 'input' event captures slider dragging and typing
+    element.addEventListener("input", update_proxy)
+
+# Execute initial render
+run_simulation()
     </script>
 </body>
 </html>
