@@ -12,6 +12,6 @@ Check out my interactive simulation below:
 
 CHILE MODEL YOUNG'S MODULUS:
 
-<iframe src="/apps/plot2.html" width="110%" height="700px" frameborder="0"></iframe>
+<iframe src="/apps/plot2.html" width="100%" height="400px" frameborder="0"></iframe>
 
 
