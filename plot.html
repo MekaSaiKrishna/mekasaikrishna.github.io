@@ -22,16 +22,26 @@ from pyscript import display, document
 from pyodide.ffi import create_proxy
 
 def compute_and_plot(event=None):
-    val = float(document.querySelector("#param").value)
-    document.querySelector("#param-val").innerText = str(val)
-    t = np.linspace(0, 10, 500)
-    y = np.exp(-0.1 * val * t) * np.cos(val * t)
-    fig, ax = plt.subplots(figsize=(6, 4))
-    ax.plot(t, y, color='dodgerblue')
-    ax.set_title(f"Dynamic Response (w={val})")
-    target = document.querySelector("#plot-target")
-    target.innerHTML = ""
-    display(fig, target="plot-target")
+        val = float(document.querySelector("#param").value)
+        document.querySelector("#param-val").innerText = str(val)
+        
+        t = np.linspace(0, 10, 500)
+        y = np.exp(-0.1 * val * t) * np.cos(val * t)
+        
+        # Create the figure
+        fig, ax = plt.subplots(figsize=(6, 4))
+        ax.plot(t, y, color='dodgerblue')
+        ax.set_title(f"Dynamic Response (w={val})")
+        
+        # Render it
+        target = document.querySelector("#plot-target")
+        target.innerHTML = ""
+        display(fig, target="plot-target")
+        
+        # --- THE FIX ---
+        # This tells Matplotlib to free up the memory for this specific figure
+        # after it has been displayed.
+        plt.close(fig)
 
 proxy = create_proxy(compute_and_plot)
 document.querySelector("#param").addEventListener("input", proxy)
