@@ -21,4 +21,4 @@ Adjust the slider below to see the real-time update.
     packages = ["matplotlib", "numpy"]
 </py-config>
 
-<script type="py" src="interactive_plot.py"></script>
+<script type="py" src="/_posts/interactive_plot.py"></script>
