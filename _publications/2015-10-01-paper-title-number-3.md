@@ -3,7 +3,7 @@ title: "Is Automated Fiber Placement Truly Free from Defects in the Era of Indus
 collection: publications
 category: conferences
 permalink: /publication/2015-10-01-paper-title-number-3
-excerpt: 'This paper is about the number 3. The number 4 is left for future work.'
+excerpt: 'Investigating layup imperfections and consolidation defects in AFP-manufactured composites using progressive damage analysis with the smeared crack approach.'
 date: 2025-05-20
 venue: 'SAMPE 2025 Indianapolis'
 slidesurl: 'https://doi.org/10.33599/nasampe/s.25.0198'

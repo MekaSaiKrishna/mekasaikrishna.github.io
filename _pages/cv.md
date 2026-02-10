@@ -107,10 +107,11 @@ _May 2019 – May 2020_
 
 Technical Skills
 ======
-* **Languages**: Python, C, ANSYS APDL, FORTRAN
-* **Softwares**: MATLAB, ABAQUS, ANSYS Workbench, Mathematica, LATEX
-* **Microsoft Apps**: MS PowerPoint, MS Excel, MS Word
-* **Experiments**: DIC (Digital Image Correlation), MTS, AFP (Automated Fiber Placement)
+* **Computational Mechanics**: ABAQUS (User Material Subroutine development), ANSYS (APDL, Workbench), Finite Element Analysis, Multiscale Modeling
+* **Programming**: Python, FORTRAN, C, MATLAB, Mathematica
+* **Data & ML**: Neural Networks, Multivariate Regression, Matplotlib, PyScript
+* **Experimental Methods**: DIC (Digital Image Correlation), MTS, AFP (Automated Fiber Placement), 4-Point Bending
+* **Other Tools**: LaTeX, Git, MS Office Suite
 
 ------
 
@@ -128,12 +129,4 @@ Talks
     {% include archive-single-talk-cv.html  %}
   {% endfor %}</ul>
 
-<!---
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
---->
-  
 

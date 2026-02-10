@@ -6,7 +6,7 @@ permalink: /publication/2009-10-01-paper-title-number-1
 excerpt: 'Coupling effects of curing with progressive damage analysis at the microstructure level (RVE).'
 date: 2023-06-19
 venue: 'ASME Aerospace Structures, Structural Dynamics, and Materials Conference'
-slidesurl: 'http://academicpages.github.io/files/slides1.pdf'
+slidesurl: # slides URL (add when available)
 paperurl: 'https://asmedigitalcollection.asme.org/ssdm/proceedings-pdf/SSDM2023/87141/V001T03A003/7052460/v001t03a003-ssdm2023-107460.pdf'
 citation: 'https://doi.org/10.1115/SSDM2023-107460'
 ---
