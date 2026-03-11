@@ -27,11 +27,19 @@ N = [N1, 0, N2, 0, N3, 0, N4, 0;
 
 % Node coordinates in GLOBAL CSYS
 % xij - ith node (1,2,3,4), jth coordinate (1,2)
+
+% General Distorted Element
 syms x11 x12 x21 x22 x31 x32 x41 x42 real positive
 x = [x11, x12;
      x21, x22;
      x31, x32;
      x41, x42;];
+
+% % Square Element (UNDISTORTED)
+% x = [-1, -1;
+%      +1, -1;
+%      +1, +1;
+%      -1, +1;];
 
 % Compute Jacobian for Bilinear Quadrilateral Element (QUAD4)
 Je = [diff(N1,xi), diff(N2,xi), diff(N3,xi), diff(N4,xi);
@@ -111,6 +119,7 @@ fprintf("------------------------------------ \n")
 
 %-------------------------------------------
 % Case-3: Reduced Order Integration (1 gauss point per direction)
+% Ke3 = 2*subs(subs(I,xi,0),eta,0);
 
 weight = [2];
 point  = [0];
@@ -145,19 +154,21 @@ disp(K4)
 fprintf("------------------------------------ \n")
 
 %% ==========================================================================
-% % 9-Node Lagrange Element
-% N1 = 0.25*xi*eta*(1-xi)*(1-eta);
-% N2 = -0.25*xi*eta*(1+xi)*(1-eta);
-% N3 = 0.25*xi*eta*(1+xi)*(1+eta);
-% N4 = -0.25*xi*eta*(1-xi)*(1+eta);
-% N5 = 0.5*eta*(1-xi^2)*(1-eta);
-% N6 = 0.5*xi*(1-eta^2)*(1+xi);
-% N7 = 0.5*eta*(1-xi^2)*(1+eta);
-% N8 = 0.5*xi*(1-eta^2)*(1-xi);
-% N9 = (1-xi^2)*(1-eta^2);
-% 
-% % N - matrix (2D)
-% N = [N1, 0, N2, 0, N3, 0, N4, 0, N5, 0, N6, 0, N7, 0, N8, 0, N9, 0;
-%       0,N1, 0, N2, 0, N3, 0, N4, 0, N5, 0, N6, 0, N7, 0, N8, 0, N9];
-% 
+% Verification
+
+% Square Element
+x = [-1, -1;
+     +1, -1;
+     +1, +1;
+     -1, +1;];
+
+% Displacement Loading Condition
+syms u real
+de = [u, 0, -u, 0, u, 0, -u, 0]';
+
+% Potential Energy
+PE1 = simplify(0.5*transpose(de)*K1*de);
+PE2 = simplify(0.5*transpose(de)*K2*de);
+PE3 = simplify(0.5*transpose(de)*K3*de);
+PE4 = simplify(0.5*transpose(de)*K4*de);
 
