@@ -111,7 +111,6 @@ fprintf("------------------------------------ \n")
 
 %-------------------------------------------
 % Case-3: Reduced Order Integration (1 gauss point per direction)
-% Ke3 = 2*subs(subs(I,xi,0),eta,0);
 
 weight = [2];
 point  = [0];
@@ -120,7 +119,7 @@ K3 = zeros(8,8);
 
 for i=1:length(weight)
     for j=1:length(weight)
-        K3 = K3 + weight(i)*weight(j)*subs(subs(I,xi,point(i)),eta,point(j));
+        K3 = K3 + weight(i)*weight(j)*subs(subs(KI,xi,point(i)),eta,point(j));
     end
 end
 
@@ -137,7 +136,7 @@ point  = [-sqrt(0.6), 0, sqrt(0.6)];
 
 for i=1:length(weight)
     for j=1:length(weight)
-        K4 = K4 + weight(i)*weight(j)*subs(subs(I,xi,point(i)),eta,point(j));
+        K4 = K4 + weight(i)*weight(j)*subs(subs(KI,xi,point(i)),eta,point(j));
     end
 end
 
